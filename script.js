@@ -33,7 +33,7 @@ function generatePassword() {
   var letterString = "";
 
   for (let i = 0; i < 5; i++) {
-    letterString = lowerCase[Math.floor(Math.random() * (26 - 0))];
+    letterString += lowerCase[Math.floor(Math.random() * (26 - 0))];
   }
 
 
