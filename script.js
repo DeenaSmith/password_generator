@@ -29,7 +29,16 @@ function writePassword() {
 }
 
 function generatePassword() {
-  return 'is this wrong?'
+
+  var letterString = "";
+
+  for (let i = 0; i < 5; i++) {
+    letterString = lowerCase[Math.floor(Math.random() * (26 - 0))];
+  }
+
+
+
+ return letterString;
 }
 
 
