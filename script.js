@@ -67,6 +67,12 @@ function generatePassword() {
 
      var isSpecial = confirm("Would you like to use special characters in your password? Click 'OK' for yes or 'Cancel' for no.");
 
+     var finalPrompt = confirm("You have selected " + isLower + " for lowercase, " + isUpper + " for uppercase, " + isNumber + " for numbers, and " + isSpecial + " for special characters. ");
+
+     if(finalPrompt === false) {
+           generatePassword();
+     }
+
 
      // For testing
      console.log(isLower, 'lower');
