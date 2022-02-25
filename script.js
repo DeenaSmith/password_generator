@@ -11,7 +11,10 @@ const randomSpecial = ['!', '@', '#', '$', '%', '&', '*', '+', '?'];
 var clearBtn = document.querySelector('#clear');
 clearBtn.addEventListener("click", clearPassword);
 function clearPassword() {
-  console.log('blahblahablahalblhaaa');
+
+      var clearPasswordText = document.querySelector("#password");
+      clearPasswordText.value = "";
+
 }
 
 
@@ -64,6 +67,8 @@ function generatePassword() {
 
      var isSpecial = confirm("Would you like to use special characters in your password? Click 'OK' for yes or 'Cancel' for no.");
 
+
+     // For testing
      console.log(isLower, 'lower');
      console.log(isUpper, 'upper');
      console.log(isNumber, 'number');
