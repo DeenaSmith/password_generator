@@ -22,23 +22,48 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
   
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
 }
 
+
+
 function generatePassword() {
 
-  var letterString = "";
 
-  for (let i = 0; i < 5; i++) {
-    letterString += lowerCase[Math.floor(Math.random() * (26 - 0))];
-  }
+      // Initial function, generates input for amount of characters
+      var charAmount = 0;
+
+      function callPrompt(){
+            while (charAmount === 0 || charAmount === null || isNaN(charAmount)) {
+                  charAmount = Number(prompt("How many characters would you like your password to be?"));
+            }
+      }
+      callPrompt()
+      
+      if(charAmount > 128 || charAmount < 8) {
+           while(charAmount > 128 || charAmount < 8  ){
+                  charAmount = Number(prompt("Please enter a valid numeric response between 8 and 128 characters."))
+
+                  if(isNaN(charAmount)){
+                        callPrompt()
+                  }
+           }
+     }
 
 
+      var letterString = "";
 
- return letterString;
+      for (let i = 0; i < charAmount; i++) {
+            var randomNumber = Math.floor(Math.random() * (26 - 0));
+            letterString += lowerCase[randomNumber];
+      }
+
+
+      return letterString;
 }
 
 
