@@ -1,4 +1,6 @@
 
+
+// Global variables 
 const lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 const upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const numsZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -71,97 +73,36 @@ function generatePassword() {
 
       for (let i = 0; i < charAmount; i++) {
 
-            if (isLower) {
-                  var randomNumber = Math.floor(Math.random() * (26 - 0));
-            letterString += lowerCase[randomNumber];
-            } else {
-                  console.log('lower denied');
+
+            if (letterString.length < charAmount) {
+
+                  if (isLower) {
+                        var randomNumber = Math.floor(Math.random() * (26 - 0));
+                        letterString += lowerCase[randomNumber];
+                  } 
+                  
+                  if (isUpper) {
+                        var randomNumber = Math.floor(Math.random() * (26 - 0));
+                        letterString += upperCase[randomNumber];
+                  } 
+                  
+                  if (isNumber) {
+                        var randomNumber = Math.floor(Math.random() * (8 - 0));
+                        letterString += numsZeroToNine[randomNumber];
+                  } 
+                  
+                  if (isSpecial) {
+                        var randomNumber = Math.floor(Math.random() * (8 - 0));
+                        letterString += randomSpecial[randomNumber];
+                  } 
+
             }
-
-            if (isUpper) {
-                  var randomNumber = Math.floor(Math.random() * (26 - 0));
-            letterString += upperCase[randomNumber];
-            } else {
-                  console.log('upper denied');
-
-
-            }if (isNumber) {
-                  var randomNumber = Math.floor(Math.random() * (8 - 0));
-            letterString += numsZeroToNine[randomNumber];
-            } else {
-                  console.log('number denied');
-            }
-
-            if (isSpecial) {
-                  var randomNumber = Math.floor(Math.random() * (8 - 0));
-            letterString += randomSpecial[randomNumber];
-            } else {
-                  console.log('special denied');
-            }
-
-            
-
-
-
-
-
 
       }
 
-
       return letterString;
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
